@@ -1,8 +1,8 @@
 <template>
 
-  <div id="mySidenav" class="sidenav">
+  <div id="app"  class="sidenav">
     <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-    <a href="#">Accuiel</a>
+    <a href="#">Accueil</a>
     <a href="#">Catalogue</a>
     <a href="#">Panier</a>
     <a href="#">Contact</a> 
@@ -20,11 +20,9 @@
 
 <style lang="css">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 .sidenav {
   height: 100%;
@@ -42,7 +40,7 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #999999;
   display: block;
   transition: 0.3s;
 }
