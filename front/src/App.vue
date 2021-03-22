@@ -2,6 +2,11 @@
 
   <div id="app"  class="sidenav">
     <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+
+    <router-link to="/todo">Accueil</router-link>
+    <router-link to="/todo">Catalogue</router-link>
+    <router-link to="/todo">Panier</router-link>
+    <router-link to="/todo">Contact</router-link>
     <a href="#">Accueil</a>
     <a href="#">Catalogue</a>
     <a href="#">Panier</a>
@@ -36,7 +41,7 @@
   padding-top: 60px;
   transition: 0.5s; 
 }
-.sidenav a {
+.sidenav router-link {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -44,7 +49,7 @@
   display: block;
   transition: 0.3s;
 }
-.sidenav a:hover {
+.sidenav router-link:hover {
   color: #f1f1f1;
 }
 @media screen and (max-height: 450px) {
