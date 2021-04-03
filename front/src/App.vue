@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <navbar></navbar>
+    <Navbar/>
+    <router-view/>
   </div>
 </template>
+
+
 <script>
-import Navbar from './components/Navbar.vue'
+import Navbar from '@/components/Navbar.vue'
 
   export default{
   components: { Navbar },
     
   }
-
 </script>
-<style scoped>
+
+<style>
+*{
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 </style>

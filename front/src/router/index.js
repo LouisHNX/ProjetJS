@@ -1,21 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Shop from '../views/Shop.vue'
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/shop',
     name: 'Shop',
-    component: () => import('../views/Shop.vue'),
+    component: Shop,
   },
 
 
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 
-export default router
+export default router;

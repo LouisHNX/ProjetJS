@@ -1,16 +1,23 @@
 <template>
     <div id="nav" class="sidenav">
-    <a href="#"><img :src="require('../assets/logo2.png')"/></a>
-    <a href="#">Catalogue</a>
+    <a href="#"><img :src="require('../assets/logo2.png')"/></a> 
+    <router-link to="/shop">Catalogue</router-link> 
     <a href="#">Modifier un élement</a>
     <a href="#">Supprimer un élement</a>
-    <a href="#">Catalogue</a>
     <a href="#">Panier</a>
     <a href="#">Contact</a>
   </div>
 </template>
 
+<script>
+export default{
+  name:'navbar2'
+}
+</script>
+
 <style scoped>
+
+
 #nav {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
