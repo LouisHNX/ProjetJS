@@ -1,17 +1,13 @@
 <template>
     <div class="topbar">
-        <button id="button">Ajouter Item</button>
-        <form action="" id="form" v-if="show">
-            <p><input type="text" placeholder="Nom"/></p>
-            <p><input type="text" placeholder="Nom latin" /></p>
-            <p><input type="text" placeholder="Couleur" /></p>
-            <p><input type="text" placeholder="Description" /></p>
-            <p><input type="text" placeholder="Prix" /></p>
-            <p><input type="submit" value="Ajouter" /></p>
-        </form>
-        <input class="searchbar" type="text" placeholder="Rechercher..">
-        <img class="logo-shop" src="../assets/shopping-cart-solid.svg" alt="logo shopping cart">
+      <div class="wrap">
+        <div class="search">
+          <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton"><img class="logo-shop" src="../assets/search-solid.svg" alt="logo search"></button>
+        </div>
       </div>
+      <img class="logo-shop" src="../assets/shopping-cart-solid.svg" alt="logo shopping cart">
+    </div>
 </template>
 
 <script>
@@ -22,7 +18,6 @@
 
 .topbar{
   width: 100%;
-  float: left;
   display: flex;
   flex-grow: 2;
   flex-shrink: 2;
@@ -30,24 +25,40 @@
   align-items: stretch;
   margin: 0 auto;
 }
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.searchTerm {
+  width: 100%;
+  border: 1px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
 
-.searchbar{
-  height: 45px;
-  border: 0px solid white;
+.searchTerm:focus{
+  color: #00B4CC;
+}
+.searchButton {
+  width: 40%px;
+  height: 32px;
+  border: 1px solid black;
+  background: white;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .logo-shop{
   width: 30px;
   height: auto;
-}
-
-#button {
-  width:75px;
-  height: 45px;
-  background:#006699;
-  color:#fff;
-  border:1px solid #006699;   
-  cursor:pointer;
 }
 
 #box form {
@@ -58,11 +69,4 @@
  top:27px;
 }
 
-input[type="submit"] {
-  background:none;
-  color:#fff;
-  border:none;
-  text-align:left;
-  cursor:pointer;
-}
 </style>
