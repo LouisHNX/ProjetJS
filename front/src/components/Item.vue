@@ -2,7 +2,7 @@
     <div class="container">
         <div class="img"></div>
         <div class="item-desc">
-            <h2>Titre Item</h2>
+            <h2></h2>
             <p>Description un peu longue</p>
             <h3>Prix :</h3>
             <div class="quantite">
@@ -16,6 +16,17 @@
 </template>
 
 <script>
+export default{
+    props:[
+        'f'
+    ],
+    data:()=>{
+        return{
+            fleur:[]
+        }
+    },
+
+}
     
 </script>
 

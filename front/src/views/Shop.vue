@@ -2,16 +2,18 @@
     <div id="box">
       <div class="pre-topbar">
         <Topbar/> 
-        <button id="button" @click="() => TogglePopup('buttonTrigger')">Ajouter Item</button>
-        <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')" />
+        <button id="button" @click="() => TogglePopup('buttonTrigger')" >Ajouter Item</button>
+        <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')" :data="fleurs" />
       </div>
-      <div class="box-catalogue">
-          <Item/>
-          <Item/>
-          <Item/>
-          <Item/>
-          <Item/>
+      <li :v-for="fleur in fleurs">{{ fleur }}</li>
+      <div class="box-catalogue" :v-for="fleur in fleurs">
+          <Item :f="fleur"/> 
       </div>
+          <Item/>
+          <Item/>
+          <Item/>
+          <Item/>
+          
       <br>
       <div class="box-catalogue">
           <Item/>
@@ -29,12 +31,30 @@ import VueCompositionAPI from '@vue/composition-api'
 
 Vue.use(VueCompositionAPI)
 
-
 import Item from '@/components/Item.vue'
 import Topbar from '../components/Topbar.vue'
 import Popup from '../components/Popup.vue'
 import { ref } from '@vue/composition-api'
+
   export default{
+    data(){
+      return{
+        fleurs:[{
+          name:'rose',
+          name_latin:'rosae',
+          couleur:'rouge',
+          description:'tkt',
+          prix:'15€'
+          },
+          {
+          name:'rose',
+          name_latin:'rosae',
+          couleur:'rouge',
+          description:'tkt',
+          prix:'15€'
+        }]
+      }
+    },
     components: { Item, Topbar,Popup },
 
     setup(){

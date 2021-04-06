@@ -13,16 +13,6 @@ const routes = [
     name: 'Shop',
     component: Shop,
   },
-  {
-    path: '/panier',
-    name: 'Panier',
-    component: Panier,
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-  },
 
 
 ]

@@ -8,7 +8,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 var mongoose = require('mongoose');
-var dbUrl = 'mongodb+srv://admin:<password>@cluster0.j1n1a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var dbUrl = 'mongodb+srv://admin:admin@projectdb.e3pmy.mongodb.net/projectdb?retryWrites=true&w=majority';
 var db = mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(logger('dev'));

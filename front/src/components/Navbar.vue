@@ -17,7 +17,6 @@ export default{
 
 <style scoped>
 
-
 #nav {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +35,7 @@ export default{
   padding-top: 40px;
   transition: 0.5s;
 }
-.sidenav a {
+.sidenav a, router-link {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 17px;

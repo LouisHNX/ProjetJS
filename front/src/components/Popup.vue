@@ -3,12 +3,12 @@
         <div class="inner-popup">
             <h2>Ajouter une Fleur</h2>
             <form action="" id="form">
-                <p><input type="text" placeholder="Nom"/></p>
-                <p><input type="text" placeholder="Nom latin" /></p>
-                <p><input type="text" placeholder="Couleur" /></p>
-                <p><input type="text" placeholder="Description" /></p>
-                <p><input type="text" placeholder="Prix" /></p>
-                <p><input type="submit" value="Ajouter" /></p>
+                <p><input type="text" placeholder="Nom" v-model="name"/></p>
+                <p><input type="text" placeholder="Nom latin" v-model="name_latin"/></p>
+                <p><input type="text" placeholder="Couleur" v-model="couleur"/></p>
+                <p><input type="text" placeholder="Description" v-model="description"/></p>
+                <p><input type="text" placeholder="Prix" v-model="prix"/></p>
+                <p><input type="submit" value="Ajouter" @click="addItem()"/></p>
             </form>
             <button class="btn-close" @click="TogglePopup()">
                 Fermer
@@ -21,7 +21,25 @@
 
 <script>
 export default {
-    props: ['TogglePopup']
+    props: ['TogglePopup','data'],
+    data(){
+        return{
+            item:{name:'',name_latin:'',couleur:'',description:'',prix:''}
+        }
+    },
+    methods:{
+        addItem(){
+            
+            let newItem = {
+                name: this.name,
+                name_latin: this.name_latin,
+                couleur: this.couleur,
+                description: this.description,
+                prix: this.prix
+            }
+            this.data.push(newItem)
+        }
+    }
 }
 </script>
 
