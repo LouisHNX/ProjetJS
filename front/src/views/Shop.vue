@@ -78,5 +78,7 @@ import { ref } from '@vue/composition-api'
   color:#fff;
   border:1px solid #006699;   
   cursor:pointer;
+  border: none;
+  outline: none;
 }
   </style>

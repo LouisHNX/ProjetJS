@@ -4,7 +4,7 @@
     <router-link to="/shop">Catalogue</router-link> 
     <a href="#">Modifier un élement</a>
     <a href="#">Supprimer un élement</a>
-    <a href="#">Panier</a>
+    <router-link to="/panier">Panier</router-link>
     <a href="#">Contact</a>
   </div>
 </template>

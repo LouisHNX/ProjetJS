@@ -1,6 +1,7 @@
 <template>
     <div class="popup">
         <div class="inner-popup">
+            <h2>Ajouter une Fleur</h2>
             <form action="" id="form">
                 <p><input type="text" placeholder="Nom"/></p>
                 <p><input type="text" placeholder="Nom latin" /></p>
@@ -25,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
+    h2{
+        text-align: center;
+    }
     .popup{
         position: fixed;
         top: 0;

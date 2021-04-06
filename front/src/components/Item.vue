@@ -5,7 +5,10 @@
             <h2>Titre Item</h2>
             <p>Description un peu longue</p>
             <h3>Prix :</h3>
-            <h3>Ajouter au panier</h3>
+            <div class="quantite">
+                <input class="input-add" type="number" value="2" min="1">
+                <button>Ajouter au panier</button>
+            </div>
         </div>
         
    </div>
@@ -37,7 +40,13 @@
     width: 250px;
     height: 172px;
 }
+p{
+    font-size: 12px;
+}
 .item-desc{
     padding: 5px;
+}
+.input-add{
+    margin-bottom: 8px;
 }
 </style>
