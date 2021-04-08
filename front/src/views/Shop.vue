@@ -10,6 +10,7 @@
       </div>
     </div>
 </template>
+
 <script>
 import Topbar from '../components/Topbar.vue'
 import Popup from '../components/Popup.vue'
@@ -23,14 +24,7 @@ import Item from '../components/Item.vue'
           couleur:'rouge',
           description:'tkt',
           prix:'15€'
-          },
-          {
-          name:'rose',
-          name_latin:'rosae',
-          couleur:'rouge',
-          description:'tkt',
-          prix:'15€'
-        }],
+          }],
         popupTriggers:{
           buttonTrigger: false,
           timedTrigger:false

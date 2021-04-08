@@ -1,6 +1,10 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+const router = express.Router();
 var mongoose = require('mongoose');
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 const item = new mongoose.Schema({
   name: String,

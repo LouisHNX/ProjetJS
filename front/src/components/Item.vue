@@ -3,8 +3,9 @@
         <div class="img"></div>
         <div class="item-desc">
             <h2>{{ f.name }}</h2>
-            <p>Description un peu longue</p>
-            <h3>Prix :</h3>
+            <h3>{{ f.name_latin }}</h3>
+            <p>{{ f.description }}</p>
+            <h3>Prix : {{ f.prix }}</h3>
             <div class="quantite">
                 <input class="input-add" type="number" value="2" min="1">
                 <button>Ajouter au panier</button>

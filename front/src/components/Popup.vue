@@ -8,12 +8,8 @@
                 <p><input type="text" placeholder="Couleur" v-model="couleur"/></p>
                 <p><input type="text" placeholder="Description" v-model="description"/></p>
                 <p><input type="text" placeholder="Prix" v-model="prix"/></p>
-                <p><input type="submit" value="Ajouter" @click="addItem()"/></p>
+                <p><input type="submit" value="Ajouter" @click="addItem(), TogglePopup()"/></p>
             </form>
-            <button class="btn-close" @click="TogglePopup()">
-                Fermer
-            </button>
-            
         </div>
     </div>
     

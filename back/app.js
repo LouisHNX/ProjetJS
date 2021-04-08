@@ -1,23 +1,37 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+import indexRouter from './routes/index.js';
+import todoRouter from './routes/todo.route.js';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
-var app = express();
-var mongoose = require('mongoose');
-var dbUrl = 'mongodb+srv://admin:admin@projectdb.e3pmy.mongodb.net/projectdb?retryWrites=true&w=majority';
-var db = mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
-
+const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/todos', todoRouter);
 
-module.exports = app;
+mongoose.connect('mongodb+srv://admin:admin@projectdb.e3pmy.mongodb.net/projectdb?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('Mongo connected');
+});
+
+export default app;
+
+
+
+
