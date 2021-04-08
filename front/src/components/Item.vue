@@ -2,14 +2,12 @@
     <div class="container">
         <div class="img"></div>
         <div class="item-desc">
-            <h2>{{ f.name }}</h2>
-            <h3>{{ f.name_latin }}</h3>
-            <p>{{ f.description }}</p>
-            <h3>Prix : {{ f.prix }}</h3>
+            <h2>{{ produit.name }}</h2>
+            <h3>Prix : {{ produit.prix }}</h3>
             <div class="quantite">
-                <input class="input-add" type="number" value="2" min="1">
                 <button>Ajouter au panier</button>
             </div>
+            
         </div>
         
    </div>
@@ -18,13 +16,12 @@
 
 <script>
 export default{
-    props:[     
-        'f'],
+    props:['produit'],
     data:()=>{
         return{
-            fleur:[]
+            '--image' : `'url('+ ${this.produit.image}')'`
         }
-    },
+    }
 
 }
     
@@ -45,7 +42,7 @@ export default{
                 0 32px 64px rgba(0,0,0,0.07);
 }
 .img{
-    background-image: url('../assets/logo.png');
+    background-image: var(--image);
     background-repeat: no-repeat;
     background-position: center;
     width: 250px;

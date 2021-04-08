@@ -1,14 +1,14 @@
 <template>
     <div class="popup">
         <div class="inner-popup">
-            <h2>Ajouter une Fleur</h2>
+            <h2>Ajouter un gâteau</h2>
             <form action="" id="form">
                 <p><input type="text" placeholder="Nom" v-model="name"/></p>
-                <p><input type="text" placeholder="Nom latin" v-model="name_latin"/></p>
-                <p><input type="text" placeholder="Couleur" v-model="couleur"/></p>
+                <p><input type="text" placeholder="Gout" v-model="gout"/></p>
                 <p><input type="text" placeholder="Description" v-model="description"/></p>
                 <p><input type="text" placeholder="Prix" v-model="prix"/></p>
                 <p><input type="submit" value="Ajouter" @click="addItem(), TogglePopup()"/></p>
+                <button class="btn-close" @click="TogglePopup()">Fermer</button>
             </form>
         </div>
     </div>
@@ -17,10 +17,10 @@
 
 <script>
 export default {
-    props: ['TogglePopup','data'],
+    props: ['TogglePopup','produit'],
     data(){
         return{
-            name:'',name_latin:'',couleur:'',description:'',prix:''
+            name:'',gout:'',description:'',prix:''
         }
     },
     methods:{
@@ -28,12 +28,11 @@ export default {
             
             let newItem = {
                 name: this.name,
-                name_latin: this.name_latin,
-                couleur: this.couleur,
+                gout: this.gout,
                 description: this.description,
                 prix: this.prix
             }
-            this.data.push(newItem)
+            this.produit.push(newItem)
         }
     }
 }

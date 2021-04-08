@@ -3,10 +3,10 @@
       <div class="pre-topbar">
         <Topbar/> 
         <button id="button" @click="() => TogglePopup('buttonTrigger')" >Ajouter Item</button>
-        <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')" :data="fleurs" />
+        <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')" :produit="gateaux" />
       </div>
-      <div class="box-catalogue" v-for="(fleur, index) in fleurs" :key="index">
-          <Item :f="fleur"/> 
+      <div class="box-catalogue" v-for="(gateau, index) in gateaux" :key="index">
+          <Item :produit="gateau"/> 
       </div>
     </div>
 </template>
@@ -18,13 +18,38 @@ import Item from '../components/Item.vue'
   export default{
     data:()=>{
       return {
-        fleurs:[{
-          name:'rose',
-          name_latin:'rosae',
-          couleur:'rouge',
-          description:'tkt',
-          prix:'15€'
-          }],
+        gateaux:[{
+          name:'Lulu la barquette',
+          gout:'chocolat',
+          description:'Biscuit croquant avec du chocolat',
+          prix:'2€',
+          image:'../assets/cookie.jpg'
+          },
+          {
+          name:'Lulu la barquette',
+          gout:'Fraise',
+          description:'Biscuit croquant avec de la fraise',
+          prix:'2€'
+          },
+          {
+          name:'Cookie',
+          gout:'Chocolat Noisette',
+          description:'Cookie avec des pépites de chocolat et de noisette',
+          prix:'3.20€'
+          },
+          {
+          name:'Petit écoliers',
+          gout:'Chocolat au lait',
+          description:'Sablé avec du chocolat au lait',
+          prix:'1.50€'
+          },
+          {
+          name:'Brownie',
+          gout:'Chocolat',
+          description:'Gateau au chocolat',
+          prix:'3€'
+          }
+          ],
         popupTriggers:{
           buttonTrigger: false,
           timedTrigger:false
