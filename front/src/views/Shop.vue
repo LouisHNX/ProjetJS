@@ -5,40 +5,18 @@
         <button id="button" @click="() => TogglePopup('buttonTrigger')" >Ajouter Item</button>
         <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')" :data="fleurs" />
       </div>
-      <li :v-for="fleur in fleurs">{{ fleur }}</li>
-      <div class="box-catalogue" :v-for="fleur in fleurs">
+      <div class="box-catalogue" v-for="(fleur, index) in fleurs" :key="index">
           <Item :f="fleur"/> 
-      </div>
-          <Item/>
-          <Item/>
-          <Item/>
-          <Item/>
-          
-      <br>
-      <div class="box-catalogue">
-          <Item/>
-          <Item/>
-          <Item/>
-          <Item/>
-          <Item/>
       </div>
     </div>
 </template>
-
 <script>
-import Vue from 'vue'
-import VueCompositionAPI from '@vue/composition-api'
-
-Vue.use(VueCompositionAPI)
-
-import Item from '@/components/Item.vue'
 import Topbar from '../components/Topbar.vue'
 import Popup from '../components/Popup.vue'
-import { ref } from '@vue/composition-api'
-
+import Item from '../components/Item.vue'
   export default{
-    data(){
-      return{
+    data:()=>{
+      return {
         fleurs:[{
           name:'rose',
           name_latin:'rosae',
@@ -52,30 +30,23 @@ import { ref } from '@vue/composition-api'
           couleur:'rouge',
           description:'tkt',
           prix:'15€'
-        }]
-      }
-    },
-    components: { Item, Topbar,Popup },
-
-    setup(){
-      const popupTriggers = ref({
+        }],
+        popupTriggers:{
           buttonTrigger: false,
           timedTrigger:false
-      })
-
-      const TogglePopup = (trigger) => {
-        popupTriggers.value[trigger] = !popupTriggers.value[trigger]
+        } 
       }
-
-      return{
-        Popup,
-        popupTriggers,
-        TogglePopup
-      }
-    }
+    },
     
+    components: { Item, Topbar,Popup },
+    methods:{
+       TogglePopup (trigger) {
+        this.popupTriggers[trigger] = !this.popupTriggers[trigger]
+      }
+    },
   }
 </script>
+
 
 <style scoped>
 #box {

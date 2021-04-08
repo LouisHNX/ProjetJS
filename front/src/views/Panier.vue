@@ -1,6 +1,7 @@
 <template>
     <main class="panier">
         <Topbar/>
+        
     </main>
 </template>
 

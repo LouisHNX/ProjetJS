@@ -2,7 +2,7 @@
     <div class="container">
         <div class="img"></div>
         <div class="item-desc">
-            <h2></h2>
+            <h2>{{ f.name }}</h2>
             <p>Description un peu longue</p>
             <h3>Prix :</h3>
             <div class="quantite">
@@ -17,9 +17,8 @@
 
 <script>
 export default{
-    props:[
-        'f'
-    ],
+    props:[     
+        'f'],
     data:()=>{
         return{
             fleur:[]

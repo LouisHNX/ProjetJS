@@ -1,6 +1,6 @@
 <template>
     <div id="nav" class="sidenav">
-    <a href="#"><img :src="require('../assets/logo2.png')"/></a> 
+    <router-link to="/home"><img :src="require('../assets/logo2.png')"/></router-link>  
     <router-link to="/shop">Catalogue</router-link> 
     <a href="#">Modifier un élement</a>
     <a href="#">Supprimer un élement</a>

@@ -24,7 +24,7 @@ export default {
     props: ['TogglePopup','data'],
     data(){
         return{
-            item:{name:'',name_latin:'',couleur:'',description:'',prix:''}
+            name:'',name_latin:'',couleur:'',description:'',prix:''
         }
     },
     methods:{
